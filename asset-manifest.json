@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/optomchecklist/static/css/main.a617e044.chunk.css",
+    "main.js": "/optomchecklist/static/js/main.0c6f7ac6.chunk.js",
+    "main.js.map": "/optomchecklist/static/js/main.0c6f7ac6.chunk.js.map",
+    "runtime-main.js": "/optomchecklist/static/js/runtime-main.118c04f4.js",
+    "runtime-main.js.map": "/optomchecklist/static/js/runtime-main.118c04f4.js.map",
+    "static/js/2.71408089.chunk.js": "/optomchecklist/static/js/2.71408089.chunk.js",
+    "static/js/2.71408089.chunk.js.map": "/optomchecklist/static/js/2.71408089.chunk.js.map",
+    "static/js/3.ca546cde.chunk.js": "/optomchecklist/static/js/3.ca546cde.chunk.js",
+    "static/js/3.ca546cde.chunk.js.map": "/optomchecklist/static/js/3.ca546cde.chunk.js.map",
+    "index.html": "/optomchecklist/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/optomchecklist/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.71408089.chunk.js.LICENSE.txt": "/optomchecklist/static/js/2.71408089.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.118c04f4.js",
+    "static/js/2.71408089.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.0c6f7ac6.chunk.js"
+  ]
+}
