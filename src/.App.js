@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 
 const preExamProcedures = [
+	"Create new examination",
 	"Select exam type",
-	"Select date and time of exam",
 	"Record date of last examination / First Eye Exam",
 	"Enter previous dispensed Rx - date and lens design / Never worn specs",
 	"Record General Health / Medication / Allergies",
@@ -19,12 +19,11 @@ const examProcedures = [
 	"Unaided Mono and Bino VA",
 	"Aided distance and near VAs for specs (and CLs)",
 	"Refraction",
-	"Binocular Vision",
 	"Best corrected VA for distance and near",
-	"CL Examination - Aided VAs",
+	"CL Examination - AidedVAs",
 	"CL Examination - Over Refraction",
 	"CL Examination - Fitting notes",
-	"CL Examiantion - trail Rx / final Rx",
+	"Final Rx / Trial Rx",
 	"IOP - device and time",
 	"K readings",
 	"Pachymetry",
@@ -36,7 +35,7 @@ const examProcedures = [
 	"Summary of findings",
 	"Give px written reasource",
 	"Make recommendaion",
-	"Arrangements of further investigate tests",
+	"Arrangements of further invetigative tests",
 	"Frame selection",
 	"Dispensing",
 	"Billing",
@@ -51,11 +50,7 @@ const postExamProcedures = [
 ];
 
 function generateObjects(itemList) {
-	return itemList.map((procedure, i) => ({
-		id: procedure + i,
-		title: procedure,
-		checked: false,
-	}));
+	return itemList.map((procedure, i) => ({ id: i, title: procedure }));
 }
 
 const preExamProceduresObjects = generateObjects(preExamProcedures);
@@ -71,42 +66,14 @@ function Header({ name }) {
 }
 
 function Main({ subheading, objectProcedures }) {
-	const [items, setItems] = useState(objectProcedures);
-	const count = items.reduce(
-		(previous, value) => previous + (value.checked ? 1 : 0),
-		0
-	);
-	const onChange = (itemThatWasClicked, checked) => {
-		const newItems = items.map((item) => {
-			if (item.title === itemThatWasClicked) {
-				return { title: item.title, checked: checked };
-			} else {
-				return item;
-			}
-		});
-		setItems(newItems);
-	};
 	return (
 		<section>
-			<h2
-				className={
-					count === objectProcedures.length ? "completed" : "incomplete"
-				}
-			>
-				{subheading} ({count}/{objectProcedures.length})
-			</h2>
+			<h2>{subheading}</h2>
 			<ul style={{ textAlign: "Left" }}>
-				{items.map((item) => (
-					<p className={item.checked ? "checked" : ""} id={item.id}>
-						<label>
-							<input
-								type="checkbox"
-								onChange={(event) =>
-									onChange(item.title, event.currentTarget.checked)
-								}
-							/>
-							{item.title}
-						</label>
+				{objectProcedures.map((procedure) => (
+					<p id={procedure.id}>
+						<input type="checkbox" />
+						{procedure.title}
 					</p>
 				))}
 			</ul>
@@ -117,10 +84,7 @@ function Main({ subheading, objectProcedures }) {
 function Footer() {
 	return (
 		<footer>
-			<p>Made by Shivan Sivakumaran - {new Date().getFullYear()}</p>
-			<p>
-				<a href="https://github.com/shivans93/optomchecklist">Source Code</a>
-			</p>
+			<p>Made by Shivan Sivakumaran {new Date().getFullYear()}</p>
 		</footer>
 	);
 }
@@ -140,6 +104,7 @@ function App() {
 			<Main
 				subheading="Post-Exam Procedure"
 				objectProcedures={postExamProceduresObjects}
+				k
 			/>
 			<Footer />
 		</div>

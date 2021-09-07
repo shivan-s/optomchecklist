@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+h2.incomplete {
+	color: red;
+}
+
+h2.completed {
+	color: green;
+}
+
+p.checked {
+	color:grey;
+	text-decoration-line: line-through
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
